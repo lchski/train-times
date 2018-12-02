@@ -50,7 +50,7 @@ arrivals %>% ggplot(mapping = aes(x = weekday, y = diff)) +
     caption = "Data from viarail.ca"
   ) +
   xlab("Day of the week") +
-  ylab("Difference") +
+  ylab("Difference (minutes)") +
   theme(
     text = element_text(family = "Helvetica")
   )
