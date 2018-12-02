@@ -1,6 +1,9 @@
 library(tidyverse)
 library(lubridate)
 
+library(ggthemr)
+ggthemr("grape")
+
 # Import
 arrivals <- read_csv("data/84.csv")
 
@@ -41,4 +44,13 @@ arrivals %>% ggplot(mapping = aes(x = date, y = diff)) +
 
 ## Difference between scheduled and actual arrival time by day of the week
 arrivals %>% ggplot(mapping = aes(x = weekday, y = diff)) +
-  geom_boxplot()
+  geom_boxplot() +
+  labs(
+    title = "Difference between scheduled and actual arrival in Toronto\nfor VIA Train 84",
+    caption = "Data from viarail.ca"
+  ) +
+  xlab("Day of the week") +
+  ylab("Difference") +
+  theme(
+    text = element_text(family = "Helvetica")
+  )
