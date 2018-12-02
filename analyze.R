@@ -30,4 +30,6 @@ weekly_report <- arrivals %>%
 # Visualize
 
 ## Average difference between scheduled and actual arrival time by week
-weekly_report %>% ggplot(mapping = aes(x = week_start, y = avg)) + geom_point() + geom_smooth()
+weekly_report %>% ggplot(mapping = aes(x = week_start, y = avg)) +
+  geom_point() +
+  geom_smooth()
