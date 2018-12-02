@@ -33,3 +33,12 @@ weekly_report <- arrivals %>%
 weekly_report %>% ggplot(mapping = aes(x = week_start, y = avg)) +
   geom_point() +
   geom_smooth()
+
+## Difference between scheduled and actual arrival time by day
+arrivals %>% ggplot(mapping = aes(x = date, y = diff)) +
+  geom_point() +
+  geom_smooth()
+
+## Difference between scheduled and actual arrival time by day of the week
+arrivals %>% ggplot(mapping = aes(x = weekday, y = diff)) +
+  geom_boxplot()
